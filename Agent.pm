@@ -1,11 +1,11 @@
 ###########################################################################
-# $Id: Agent.pm,v 1.4 2003/09/27 17:40:40 wendigo Exp $
+# $Id: Agent.pm,v 1.5 2003/09/27 17:54:17 wendigo Exp $
 ###########################################################################
 #
 # Log::Agent
 #
-# RCS Revision: $Revision: 1.4 $
-# Date: $Date: 2003/09/27 17:40:40 $
+# RCS Revision: $Revision: 1.5 $
+# Date: $Date: 2003/09/27 17:54:17 $
 #
 # Copyright (C) 1999 Raphael Manfredi.
 # Copyright (C) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
@@ -14,6 +14,9 @@
 # distribution for license information.
 #
 # $Log: Agent.pm,v $
+# Revision 1.5  2003/09/27 17:54:17  wendigo
+# Fixed an simple CVS substitution problem.
+#
 # Revision 1.4  2003/09/27 17:40:40  wendigo
 # Added wrapper for AUTOLOAD to stash $! away in $Log::Agent::OS_Error
 # so it doesn't get clobbered during the execution of &AutoLoader::AUTOLOAD.
@@ -79,11 +82,8 @@ $Trace = NOTICE;	# Default tracing
 $OS_Error = '';         # Data stash for the $! value
 
 sub AUTOLOAD {
-    $Log: Agent.pm,v $
-    Revision 1.4  2003/09/27 17:40:40  wendigo
-    Added wrapper for AUTOLOAD to stash $! away in $Log::Agent::OS_Error
-    so it doesn't get clobbered during the execution of &AutoLoader::AUTOLOAD.
-!;
+    ${Log::Agent::OS_Error} = $!;       # for safe-keeping, the braces
+                                        # prevent CVS substitution
     $AutoLoader::AUTOLOAD = $AUTOLOAD;
     goto &AutoLoader::AUTOLOAD;
 }
