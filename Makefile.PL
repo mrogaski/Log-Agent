@@ -1,4 +1,4 @@
-# $Id: Makefile.PL,v 1.3 2003/09/27 17:54:17 wendigo Exp $
+# $Id: Makefile.PL,v 1.4 2003/09/27 18:12:53 wendigo Exp $
 #
 #  Copyright (C) 1999 Raphael Manfredi
 #  Copyright (C) 2003 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
@@ -8,6 +8,9 @@
 #
 # HISTORY
 # $Log: Makefile.PL,v $
+# Revision 1.4  2003/09/27 18:12:53  wendigo
+# Removed unecessary prerequsites.
+#
 # Revision 1.3  2003/09/27 17:54:17  wendigo
 # Fixed an simple CVS substitution problem.
 #
@@ -29,10 +32,8 @@ WriteMakefile(
     NAME => 'Log::Agent',
     VERSION_FROM => 'Agent.pm',
     PREREQ_PM => {
-        'AutoLoader' => 0,
-        'Carp' => 0,
         'Tie::Array' => 0
     },
-    NO_META => 1
+    ($] < 5.008_001 ? () : ( NO_META => 1 ))
 );
 
