@@ -1,3 +1,10 @@
+Sat Sep 27 11:28:43 EDT 2003   Mark Rogaski <mrogaski@cpan.org>
+
+. Description:  0.3.5
+
+        Fixed the t/format.t test for Perl 5.8.1, it seems that 
+        $! is now modified during a call to logerr().  
+
 Sat Mar  8 11:43:41 EST 2003   Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.4
