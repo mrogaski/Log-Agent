@@ -1,19 +1,22 @@
 ###########################################################################
-# $Id: Agent.pm,v 1.5 2003/09/27 17:54:17 wendigo Exp $
+# $Id: Agent.pm,v 1.6 2003/09/27 18:11:13 wendigo Exp $
 ###########################################################################
 #
 # Log::Agent
 #
-# RCS Revision: $Revision: 1.5 $
-# Date: $Date: 2003/09/27 17:54:17 $
+# RCS Revision: $Revision: 1.6 $
+# Date: $Date: 2003/09/27 18:11:13 $
 #
 # Copyright (C) 1999 Raphael Manfredi.
-# Copyright (C) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
+# Copyright (C) 2002-2003 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
 #
 # See the README file included with the
 # distribution for license information.
 #
 # $Log: Agent.pm,v $
+# Revision 1.6  2003/09/27 18:11:13  wendigo
+# Modified comments.
+#
 # Revision 1.5  2003/09/27 17:54:17  wendigo
 # Fixed an simple CVS substitution problem.
 #

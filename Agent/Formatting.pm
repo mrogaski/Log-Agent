@@ -1,19 +1,22 @@
 ###########################################################################
-# $Id: Formatting.pm,v 1.4 2003/09/27 17:41:41 wendigo Exp $
+# $Id: Formatting.pm,v 1.5 2003/09/27 18:11:16 wendigo Exp $
 ###########################################################################
 #
 # Log::Agent::Formatting
 #
-# RCS Revision: $Revision: 1.4 $
-# Date: $Date: 2003/09/27 17:41:41 $
+# RCS Revision: $Revision: 1.5 $
+# Date: $Date: 2003/09/27 18:11:16 $
 #
 # Copyright (c) 1999 Raphael Manfredi
-# Copyright (c) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
+# Copyright (c) 2002-2003 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
 #
 # See the README file included with the
 # distribution for license information.
 #
 # $Log: Formatting.pm,v $
+# Revision 1.5  2003/09/27 18:11:16  wendigo
+# Modified comments.
+#
 # Revision 1.4  2003/09/27 17:41:41  wendigo
 # Modified to use $Log::Agent::OS_Error for substitution of %m instead
 # of $!.
