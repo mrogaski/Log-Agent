@@ -12,6 +12,7 @@ Agent/Driver/Datum.pm            Intercepting driver for Devel::Datum
 Agent/Driver/Default.pm          Default logging driver
 Agent/Driver/File.pm             File driver
 Agent/Driver/Fork.pm             Fork to split output to multiple drivers
+Agent/Driver/Mail.pm             Email driver
 Agent/Driver/Silent.pm           Silent driver
 Agent/Driver/Syslog.pm           Syslog driver
 Agent/File/Native.pm             A native file handle
