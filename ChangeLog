@@ -1,3 +1,12 @@
+Thu Apr 25 22:51:11 EDT 2002   Mark Rogaski <mrogaski@cpan.org>
+
+. Description:  0.3.1p1
+
+        Added trial Log::Agent::Driver::Mail for sending log messages
+        via email.
+
+        Minor changes to version control.
+
 Mon Mar 18 13:15:38 EST 2002   Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.1
