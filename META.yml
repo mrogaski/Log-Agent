@@ -1,0 +1,34 @@
+--- #YAML:1.0
+###########################################################################
+# $Id: META.yml,v 1.1 2003/09/27 16:29:17 wendigo Exp $
+###########################################################################
+#
+# META.yml
+#
+# RCS Revision: $Revision: 1.1 $
+# Date: $Date: 2003/09/27 16:29:17 $
+#
+# Copyright (C) 2003 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
+#
+# See the README file included with the
+# distribution for license information.
+#
+# http://module-build.sourceforge.net/META-spec.html
+#
+###########################################################################
+
+name:                   Log-Agent
+version:                0.305
+version_from:           Agent.pm
+license:                artistic
+distribution_type:      module
+installdirs:            site
+requires:               
+    AutoLoader: 0
+    Carp: 0
+recommends:
+    Callback: 0
+build_requires:
+    Test: 0
+dynamic_config:         0
+
