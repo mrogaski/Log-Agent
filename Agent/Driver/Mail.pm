@@ -1,11 +1,11 @@
 ###########################################################################
-# $Id: Mail.pm,v 1.1 2002/04/25 05:38:47 wendigo Exp $
+# $Id: Mail.pm,v 1.2 2002/05/12 09:04:09 wendigo Exp $
 ###########################################################################
 #
 # Log::Agent::Driver::Mail
 #
-# RCS Revision: $Revision: 1.1 $
-# Date: $Date: 2002/04/25 05:38:47 $
+# RCS Revision: $Revision: 1.2 $
+# Date: $Date: 2002/05/12 09:04:09 $
 #
 # Copyright (C) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
 #
@@ -13,6 +13,10 @@
 # distribution for license information.
 #
 # $Log: Mail.pm,v $
+# Revision 1.2  2002/05/12 09:04:09  wendigo
+# added optional arguments to Mail::Mailer->new()
+# changed format of make() arguments
+#
 # Revision 1.1  2002/04/25 05:38:47  wendigo
 # Initial revision
 #
@@ -39,20 +43,22 @@ use vars qw(@ISA);
 #
 sub make {
     my $self = bless {
-        prefix     => '',
-        to         => (getpwuid $<)[0],
-        cc         => '',
-        bcc        => '',
-        subject    => '',
-        from       => '',
-        priority   => '',
-        'reply-to' => ''
+        prefix      => '',
+        to          => (getpwuid $<)[0],
+        cc          => '',
+        bcc         => '',
+        subject     => '',
+        from        => '',
+        priority    => '',
+        reply_to  => '',
+        mailer      => []
     }, shift;
 
     my (%args) = @_;
     
     foreach my $key (keys %args) {
-        if ($key =~ /^-(to|cc|bcc|prefix|subject|from|priority|reply-to)$/) {
+        if ($key =~ /^-(to|cc|bcc|prefix|subject|from|priority|reply_to|
+                mailer)$/x) {
             $self->{$1} = $args{$key};
         } else {
             use Carp;
@@ -80,11 +86,13 @@ sub write {
     my($self, $chan, $prio, $mesg) = @_;
 
     my(%headers);
-    foreach my $hdr (qw( to cc bcc subject from priority reply-to )) {
-        $headers{ucfirst($hdr)} = $self->{$hdr} unless $self->{$hdr} eq '';
+    foreach my $hdr (qw( to cc bcc subject from priority reply_to )) {
+        my $fhdr = ucfirst($hdr);
+        $fhdr =~ s/_/-/g;
+        $headers{$fhdr} = $self->{$hdr} unless $self->{$hdr} eq '';
     }
 
-    my $mailer = Mail::Mailer->new;
+    my $mailer = Mail::Mailer->new(@{$self->{mailer}});
     $mailer->open(\%headers);
     print $mailer $mesg, "\n";
     $mailer->close;
@@ -113,6 +121,7 @@ Log::Agent::Driver::Mail - email driver for Log::Agent
      -to      => 'oncall@example.org',
      -cc      => [ qw( noc@example.org admin@example,net ) ],
      -subject => "ALERT! ALERT!",
+     -mailer  => [ 'smtp', Server => 'mail.example.net' ]
  );
  logconfig(-driver => $driver);
 
@@ -138,7 +147,7 @@ An optional prefix for the message body.
 The destination addresses, may be a scalar containing a valid email address
 or a reference to an array of addresses.
 
-=item B<-reply-to>
+=item B<-reply_to>
 
 The reply-to addresses, may be a scalar containing a valid email address
 or a reference to an array of addresses.
@@ -166,10 +175,10 @@ address or a reference to an array of addresses.
 The priority level for the email message.  This is NOT related to the logging
 priority.
 
-=item B<-to>
+=item B<-mailer>
 
-The destination addresses, may be a scalar containing a valid email address
-or a reference to an array of addresses.
+A reference to an array containing the optional arguments to
+Mail::Mailer->new().  Generally, this can be omitted.
 
 =back
 
