@@ -1,11 +1,11 @@
 ###########################################################################
-# $Id: Agent.pm,v 1.2 2002/04/26 02:50:17 wendigo Exp $
+# $Id: Agent.pm,v 1.3 2002/04/26 03:12:56 wendigo Exp $
 ###########################################################################
 #
 # Log::Agent
 #
-# RCS Revision: $Revision: 1.2 $
-# Date: $Date: 2002/04/26 02:50:17 $
+# RCS Revision: $Revision: 1.3 $
+# Date: $Date: 2002/04/26 03:12:56 $
 #
 # Copyright (C) 1999 Raphael Manfredi.
 # Copyright (C) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
@@ -14,8 +14,8 @@
 # distribution for license information.
 #
 # $Log: Agent.pm,v $
-# Revision 1.2  2002/04/26 02:50:17  wendigo
-# modified $VERSION
+# Revision 1.3  2002/04/26 03:12:56  wendigo
+# *** empty log message ***
 #
 # Revision 1.1  2002/03/09 16:57:56  wendigo
 # New maintainer
@@ -69,7 +69,7 @@ use vars qw(@ISA @EXPORT @EXPORT_OK);
 use Log::Agent::Priorities qw(:LEVELS priority_level level_from_prio);
 use Log::Agent::Formatting qw(tag_format_args);
 
-$VERSION = (qw( $Name:  $ ))[1];
+$VERSION = sprintf "%d.%01d%02d%s", (split /[^0-9p]+/, '$Name:  $')[1..4];
 
 $Trace = NOTICE;	# Default tracing
 
