@@ -1,5 +1,5 @@
 #
-# $Id: Driver.pm,v 1.1 2002/03/09 16:01:37 wendigo Exp $
+# $Id: Driver.pm,v 1.2 2002/05/10 05:02:56 wendigo Exp $
 #
 #  Copyright (c) 1999, Raphael Manfredi
 #  
@@ -8,6 +8,9 @@
 #
 # HISTORY
 # $Log: Driver.pm,v $
+# Revision 1.2  2002/05/10 05:02:56  wendigo
+# added a mention of Log::Agent::Driver::Fork
+#
 # Revision 1.1  2002/03/09 16:01:37  wendigo
 # New maintainer
 #
@@ -593,6 +596,7 @@ Raphael Manfredi F<E<lt>Raphael_Manfredi@pobox.comE<gt>>
 =head1 SEE ALSO
 
 Log::Agent(3), Log::Agent::Driver::Default(3), Log::Agent::Driver::File(3),
-Log::Agent::Driver::Silent(3), Log::Agent::Driver::Syslog(3), Carp::Datum(3).
+Log::Agent::Driver::Fork(3), Log::Agent::Driver::Silent(3),
+Log::Agent::Driver::Syslog(3), Carp::Datum(3).
 
 =cut
