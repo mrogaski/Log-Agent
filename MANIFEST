@@ -33,7 +33,7 @@ t/carp.pl                        Library for tests
 t/carp_default.t                 Test logcarp() and logxcarp() with defaults
 t/carp_file.t                    Test logcarp() and logxcarp() to file
 t/carp_fork.t                    Test logcarp() and logxcarp() to fork
-t/carp_multiline/t               Test logcarp() and logxcarp() with newlines
+t/carp_multiline.t               Test logcarp() and logxcarp() with newlines
 t/carp_silent.t                  Test logcarp() and logcroak() with silent
 t/code.pl                        Library for tests
 t/common.pl                      Library for tests
