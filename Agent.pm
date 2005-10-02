@@ -1,14 +1,15 @@
 ###########################################################################
-# $Id: Agent.pm,v 1.10 2005/10/02 16:56:38 wendigo Exp $
+# $Id: Agent.pm,v 1.11 2005/10/02 16:57:17 wendigo Exp $
 ###########################################################################
 #
 # Log::Agent
 #
-# RCS Revision: $Revision: 1.10 $
-# Date: $Date: 2005/10/02 16:56:38 $
+# RCS Revision: $Revision: 1.11 $
+# Date: $Date: 2005/10/02 16:57:17 $
 #
 # Copyright (C) 1999 Raphael Manfredi.
-# Copyright (C) 2002-2003 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
+# Copyright (C) 2002-2003,2005 Mark Rogaski, mrogaski@cpan.org;
+# all rights reserved.
 #
 # See the README file included with the
 # distribution for license information.
