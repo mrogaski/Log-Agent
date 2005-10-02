@@ -1,3 +1,6 @@
+
+Sun Oct  2 12:57:35 EDT 2005   Mark Rogaski <mrogaski@cpan.org>
+
 . Description:	0.3.7
 
         Replaced a non-localized modification $^W with "no warnings" so
