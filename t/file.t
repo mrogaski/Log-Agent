@@ -1,35 +1,16 @@
-#!./perl
-###########################################################################
-# $Id: file.t,v 0.4 2004/02/03 03:37:02 wendigo Exp $
+#!perl
 ###########################################################################
 #
-# file.t
+#   file.t
 #
-# RCS Revision: $Revision: 0.4 $
-# Date: $Date: 2004/02/03 03:37:02 $
+#   Copyright (C) 1999 Raphael Manfredi.
+#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   all rights reserved.
 #
-# Copyright (C) 1999 Raphael Manfredi
-# Copyright (C) 2002 Mark Rogaski, mrogaski@cpan.org; all rights reserved.
+#   See the README file included with the
+#   distribution for license information.
 #
-# See the README file included with the
-# distribution for license information.
-#
-# $Log: file.t,v $
-# Revision 0.4  2004/02/03 03:37:02  wendigo
-# Replaced unnecessary file alias with actual file name.
-#
-# Revision 0.3  2002/02/23 06:28:56  wendigo
-# Maintainer change
-# - improved output redirection
-# - switched to ok() from Test.pm
-#
-# Revision 0.2.1.1  2001/03/13 18:46:06  ram
-# patch2: fixed bug for *BSD systems
-#
-# Revision 0.2  2000/11/06 19:30:34  ram
-# Baseline for second Alpha release.
-#
-###########################################################################
+##########################################################################
 
 use Test;
 use Log::Agent;
