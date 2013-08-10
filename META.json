@@ -1,0 +1,34 @@
+{
+   "abstract" : "A general logging framework",
+   "author" : [
+      "Mark Rogaski <mrogaski@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "license" : [
+      "artistic_1"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Log-Agent",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "recommends" : {
+            "Callback" : "0"
+         },
+         "requires" : {
+            "Tie::Array" : "0"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "version" : "0.307",
+   "x_installdirs" : "site",
+   "x_version_from" : "Agent.pm"
+}
