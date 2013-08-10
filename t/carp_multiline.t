@@ -15,12 +15,14 @@
 use Test;
 use Carp;
 use Log::Agent;
+use Data::Dumper;
 
 BEGIN { plan tests => 1 }
 
 eval { croak "Yo\nla\ntengo" }; $die1 = $@; eval { logcroak "Yo\nla\ntengo" };
 $die2 = $@;
 $die1 =~ s/^\s+eval.*\n//m;
+$die1 =~ s/(at .* line \d+)\./$1/m; # I'm not gonna bother.
 
 ok($die1 eq $die2);
 
