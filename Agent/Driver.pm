@@ -206,6 +206,7 @@ sub carpmess {
     #
 
     chomp($msg);                    # Remove final "\n" added
+
     if ($msg =~ s/^(.*?)\n//) {
         my $first = $1;
 
@@ -252,6 +253,10 @@ sub carpmess {
     }
 
     $msg = $str->str;
+
+    # Another Carp workaround kludge.
+    $msg =~ s/ at .*\d\.at / at /;
+
     $msg =~ s/__MESSAGE__/$original/;
     $str->set_str($msg);
 
