@@ -219,7 +219,7 @@ SKIP: {
     logconfig(-driver => $driver);
     logsay "HONK HONK!";
 
-    ok(perm_ok('t./file9.out', 0640));
+    ok(perm_ok('t/file9.out', 0640));
 
     unlink 't/file9.out';
 
