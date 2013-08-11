@@ -15,7 +15,6 @@
 use Test;
 use Carp;
 use Log::Agent;
-use Data::Dumper;
 
 BEGIN { plan tests => 1 }
 
