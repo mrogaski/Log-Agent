@@ -36,7 +36,7 @@ use vars qw(@ISA @EXPORT @EXPORT_OK);
 use Log::Agent::Priorities qw(:LEVELS priority_level level_from_prio);
 use Log::Agent::Formatting qw(tag_format_args);
 
-$VERSION = '0.307';
+$VERSION = '0.308';
 
 $Trace = NOTICE;	# Default tracing
 $OS_Error = '';         # Data stash for the $! value
@@ -483,10 +483,6 @@ The logging interface is common for all the logging drivers, and is
 therefore the result of a compromise between many logging schemes: any
 information given at this level must be either handled by all drivers,
 or may be ignored depending on the application's final choice.
-
-WARNING: THIS INTERFACE IS STILL SOMEWHAT ALPHA AND COULD STILL CHANGE
-DEPENDING ON THE FEEDBACK I SHALL GET FROM USERS AND FROM MY OWN
-EXPERIENCE USING IT, WITHOUT ANY BACKWARD COMPATIBILITY ASSURANCE.
 
 =head1 PRIORITIES AND LEVEL
 

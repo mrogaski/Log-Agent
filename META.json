@@ -5,7 +5,7 @@
    ],
    "dynamic_config" : 0,
    "license" : [
-      "artistic_1"
+      "artistic_2"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
