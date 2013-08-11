@@ -17,7 +17,11 @@ WriteMakefile(
     NAME => 'Log::Agent',
     VERSION_FROM => 'Agent.pm',
     PREREQ_PM => {
-        'Tie::Array' => 0
+        'Tie::Array' => 0,
+        'Test::More' => 0,
+    },
+    clean => {
+        FILES => '*.err *.out t/*.err t/*.out',
     },
     ($] < 5.008_001 ? () : ( NO_META => 1 ))
 );
