@@ -1,5 +1,14 @@
+Sat Aug 10, 2013    Mark Rogaski <mrogaski@cpan.org>
 
-Sun Oct  2 12:57:35 EDT 2005   Mark Rogaski <mrogaski@cpan.org>
+. Description:  0.3.8
+
+        Changed license to the Artistic License 2.0.
+
+        Replaced META.yml with META.json.
+
+        Fixed tests for Carp behavior and file permissions.
+
+Sun Oct  2, 2005    Mark Rogaski <mrogaski@cpan.org>
 
 . Description:	0.3.7
 
@@ -13,7 +22,7 @@ Sun Oct  2 12:57:35 EDT 2005   Mark Rogaski <mrogaski@cpan.org>
         Fixed a minor undef warning in a major kludge in the Agent::Driver
         code.
 		
-Mon Feb  2 22:34:28 EST 2004   Mark Rogaski <mrogaski@cpan.org>
+Mon Feb  2, 2004    Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.6
 
@@ -22,7 +31,7 @@ Mon Feb  2 22:34:28 EST 2004   Mark Rogaski <mrogaski@cpan.org>
         alias with the actual file name in t/file.t.  Thanks to Jay Lawrence 
         and Terrence Brannon for pointing out the test problems.
 
-Sat Sep 27 13:56:58 EDT 2003   Mark Rogaski <mrogaski@cpan.org>
+Sat Sep 27, 2003    Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.5
 
@@ -32,7 +41,7 @@ Sat Sep 27 13:56:58 EDT 2003   Mark Rogaski <mrogaski@cpan.org>
 
         Added a META.yml file and disabled autogeneration in Makefile.PL.
 
-Sat Mar  8 11:43:41 EST 2003   Mark Rogaski <mrogaski@cpan.org>
+Sat Mar  8, 2003    Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.4
 
@@ -44,7 +53,7 @@ Sat Mar  8 11:43:41 EST 2003   Mark Rogaski <mrogaski@cpan.org>
         Added support for embedded newlines in messages passed to
         logcarp() and logxcarp().
 
-Mon Sep 30 23:48:20 EDT 2002   Mark Rogaski <mrogaski@cpan.org>
+Mon Sep 30, 2002    Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.3
 
@@ -52,14 +61,14 @@ Mon Sep 30 23:48:20 EDT 2002   Mark Rogaski <mrogaski@cpan.org>
         to problems with redirecting the output of Mail::Mailer in
         test mode.
 
-Thu Aug  1 23:44:06 EDT 2002   Mark Rogaski <mrogaski@cpan.org>
+Thu Aug  1, 2002    Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.2
 
         Expanded &Carp::shortmess workaround in Log::Agent::Driver to
         handle behavior under Perl 5.8.0.
 
-Sun May 12 05:05:46 EDT 2002   Mark Rogaski <mrogaski@cpan.org>
+Sun May 12, 2002    Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.1p2
 
@@ -68,7 +77,7 @@ Sun May 12 05:05:46 EDT 2002   Mark Rogaski <mrogaski@cpan.org>
         Added argument for Mail::Mailer options in
         Log::Agent::Driver::Mail->make().
 
-Thu Apr 25 22:51:11 EDT 2002   Mark Rogaski <mrogaski@cpan.org>
+Thu Apr 25, 2002    Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.1p1
 
@@ -77,7 +86,7 @@ Thu Apr 25 22:51:11 EDT 2002   Mark Rogaski <mrogaski@cpan.org>
 
         Minor changes to version control.
 
-Mon Mar 18 13:15:38 EST 2002   Mark Rogaski <mrogaski@cpan.org>
+Mon Mar 18, 2002    Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.1
 
@@ -85,7 +94,7 @@ Mon Mar 18 13:15:38 EST 2002   Mark Rogaski <mrogaski@cpan.org>
         now relying on later failure for invalid argument.  Only testing
         with ref() now.
 
-Sat Feb 23 03:14:37 EST 2002   Mark Rogaski <mrogaski@cpan.org>
+Sat Feb 23, 2002    Mark Rogaski <mrogaski@cpan.org>
 
 . Description:  0.3.0
 
@@ -98,7 +107,7 @@ Sat Feb 23 03:14:37 EST 2002   Mark Rogaski <mrogaski@cpan.org>
         Corrected "uninitialized value" in Log::Agent::Tag::Caller caused
         by undefined $subroutine.
 
-Wed Apr 11 17:54:44 MEST 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Wed Apr 11, 2001    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -110,7 +119,7 @@ Wed Apr 11 17:54:44 MEST 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
         Indeed, Log::Agent::Logger uses those routines but makes
         strict use of syslog priority names.
 
-Sat Mar 31 12:03:15 MEST 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Sat Mar 31, 2001    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -121,13 +130,13 @@ Sat Mar 31 12:03:15 MEST 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
         Fixed off-by-one error in prio_from_level(), which caused
         improper conversion for level 10.
 
-Thu Mar 15 00:42:22 MET 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Thu Mar 15, 2001    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
         Updated version number.
 
-Thu Mar 15 00:41:24 MET 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Thu Mar 15, 2001    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -136,7 +145,7 @@ Thu Mar 15 00:41:24 MET 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
         Was wrongly issuing test headers twice when skipping
         the t/tag_callback.t tests.
 
-Tue Mar 13 20:15:37 MET 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Tue Mar 13, 2001    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -144,7 +153,7 @@ Tue Mar 13 20:15:37 MET 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
         Manual page for Log::Agent::Tag::Priority was irrelevant.
 
-Tue Mar 13 19:52:02 MET 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Tue Mar 13, 2001    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -161,7 +170,7 @@ Tue Mar 13 19:52:02 MET 2001   Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
         9 new files, 1 file suppressed.
 
-Sun Nov 12 15:48:21 MET 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Sun Nov 12, 2000    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -169,7 +178,7 @@ Sun Nov 12 15:48:21 MET 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
         Minor typo fixes.
 
-Mon Nov  6 20:12:06 MET 2000    Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Mon Nov  6, 2000    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
         Version 0.2.0
 
@@ -183,7 +192,7 @@ Mon Nov  6 20:12:06 MET 2000    Raphael Manfredi <Raphael_Manfredi@pobox.com>
         logging level set.  By default, it is "notice", so that even logsay()
         is visible.
 
-Sun Oct  1 22:05:51 MEST 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Sun Oct  1, 2000    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -199,20 +208,20 @@ Sun Oct  1 22:05:51 MEST 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
         5 new files.
 
-Tue Jul  4 22:03:04 MEST 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Tue Jul  4, 2000    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
         Forgot to increase version number at last patch.
 
-Tue Jul  4 22:01:55 MEST 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Tue Jul  4, 2000    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
         Was missing default init check before calling logwrite(),
         resulting in a call on an undefined referenced in logtrc()
         and logdbg() when no explicit configuration was otherwise made.
-Tue Jun 20 23:27:14 MEST 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Tue Jun 20, 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -229,13 +238,13 @@ Tue Jun 20 23:27:14 MEST 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
         now frozen in Log::Agent, and implemented in terms of logwrite(),
         which may be redefined as suited.
 
-Thu Mar 30 21:25:23 MEST 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Thu Mar 30, 2000    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
         Forgot that /(?<!)/ is a 5.005 feature, fixed Agent/Caller.pm.
 
-Sun Mar  5 23:30:16 MET 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Sun Mar  5, 2000    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -256,7 +265,7 @@ Sun Mar  5 23:30:16 MET 2000   Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
         Three new files.
 
-Thu Dec  9 18:31:30 MET 1999   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Thu Dec  9, 1999    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -265,7 +274,7 @@ Thu Dec  9 18:31:30 MET 1999   Raphael Manfredi <Raphael_Manfredi@pobox.com>
         this is parsed at compile time, hence we need to protect
         the expression within an eval.
 
-Wed Dec  8 22:53:27 MET 1999   Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Wed Dec  8, 1999    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 
 . Description:
 
@@ -274,7 +283,8 @@ Wed Dec  8 22:53:27 MET 1999   Raphael Manfredi <Raphael_Manfredi@pobox.com>
         Mentions that perl 5.005 fails tests on Linux due to a perl or
         glibc bug. It's only the test code that fails though.
 
-Tue Dec  7 22:01:49 MET 1999  Raphael Manfredi <Raphael_Manfredi@pobox.com>
+Tue Dec  7, 1999    Raphael Manfredi <Raphael_Manfredi@pobox.com>
 . Description
 
         Initial revision 0.1.
+
