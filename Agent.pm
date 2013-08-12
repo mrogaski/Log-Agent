@@ -17,7 +17,7 @@ require Exporter;
 ########################################################################
 package Log::Agent;
 
-use vars qw($VERSION $Driver $Prefix $Trace $Debug $Confess
+use vars qw($Driver $Prefix $Trace $Debug $Confess
 	$OS_Error $AUTOLOAD $Caller $Priorities $Tags $DATUM %prio_cache);
 
 use AutoLoader;
@@ -36,7 +36,8 @@ use vars qw(@ISA @EXPORT @EXPORT_OK);
 use Log::Agent::Priorities qw(:LEVELS priority_level level_from_prio);
 use Log::Agent::Formatting qw(tag_format_args);
 
-$VERSION = '0.308';
+our $VERSION = '1.000';
+$VERSION = eval $VERSION;
 
 $Trace = NOTICE;	# Default tracing
 $OS_Error = '';         # Data stash for the $! value
