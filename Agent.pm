@@ -784,7 +784,20 @@ logging driver.  Is this a problem?
 
 =head1 AUTHOR
 
-Raphael Manfredi F<E<lt>Raphael_Manfredi@pobox.comE<gt>>
+Log::Agent was originally authored by Raphael Manfredi F<E<lt>Raphael_Manfredi@pobox.comE<gt>> and is currently maintained by Mark Rogaski F<E<lt>mrogaski@cpan.orgE<gt>>.
+
+=head1 LICENSE
+
+Copyright (c) 1999-2000 Raphael Manfredi.
+
+Copyright (c) 2002-2003, 2005, 2013 Mark Rogaski; all rights reserved.
+
+This module is free software.  You can redistribute it and/or
+modify it under the terms of the Artistic License 2.0.
+
+This program is distributed in the hope that it will be useful,
+but without any warranty; without even the implied warranty of
+merchantability or fitness for a particular purpose.
 
 =head1 SEE ALSO
 
