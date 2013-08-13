@@ -4,6 +4,16 @@
 
 =over 4
 
+=item B<Version 1.000> (2013-08-13)
+
+Switched to standard X.YYYZZZ versioning.
+
+Replaced ChangeLog with changes.pod.
+
+Updated 'clean' arguments in Makefile.PL.
+
+Updated Agent.pm and replaced old README.
+
 =item B<Version 0.308> (2013-08-10)
 
 Changed license to the Artistic License 2.0.
