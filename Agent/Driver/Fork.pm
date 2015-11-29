@@ -308,6 +308,8 @@ Create a Log::Agent::Driver::Fork driver that duplicates logxxx() calls and
 distributes them to the drivers in @drivers.  The arguments must be the return
 value of the make() call for the client drivers.
 
+=back
+
 =head1 NOTES
 
 Many thanks go to Daniel Lundin and Jason May who proposed this module

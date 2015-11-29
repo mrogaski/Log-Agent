@@ -179,6 +179,8 @@ Create a Log::Agent::Driver::Default driver whose prefix string will be
 $prefix. When no prefix is configured, the first letter of each logged
 string will be uppercased.
 
+=back
+
 =head1 CHANNELS
 
 The C<error>, C<output> and C<debug> channels all go to STDERR.

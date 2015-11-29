@@ -559,7 +559,7 @@ emit() does not care!
 =back
 
 The following routine is B<frozen>. There is no way in Perl to freeze a routine,
-i.e. to explicitely forbid any redefinition, so this is an informal
+i.e. to explicitly forbid any redefinition, so this is an informal
 notification:
 
 =over 4

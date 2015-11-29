@@ -134,7 +134,7 @@ underneath.
 =item C<-level> => I<level>
 
 This parameter is internally added by C<Log::Agent> when computing the
-priority tag, since only it knows the level of the current messsage.
+priority tag, since only it knows the level of the current message.
 
 =item C<-postfix> => I<flag>
 
@@ -144,7 +144,7 @@ By default, it is prepended to the log message, i.e. this parameter is false.
 =item C<-priority> => I<prio>
 
 This parameter is internally added by C<Log::Agent> when computing the
-priority tag, since only it knows the priority of the current messsage.
+priority tag, since only it knows the priority of the current message.
 
 =item C<-separator> => I<string>
 
