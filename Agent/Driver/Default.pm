@@ -3,7 +3,7 @@
 #   Default.pm
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -178,6 +178,8 @@ The only routine of interest here is the creation routine:
 Create a Log::Agent::Driver::Default driver whose prefix string will be
 $prefix. When no prefix is configured, the first letter of each logged
 string will be uppercased.
+
+=back
 
 =head1 CHANNELS
 

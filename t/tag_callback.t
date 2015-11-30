@@ -4,7 +4,7 @@
 #   tag_callback.t
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -62,4 +62,3 @@ ok 1, contains("t/file.err", '<a:b:c> error string$');
 ok 2, contains("t/file.err", '<a:b:c> warn string <d:e:f>$');
 
 unlink 't/file.out', 't/file.err';
-

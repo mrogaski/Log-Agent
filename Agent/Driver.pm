@@ -3,7 +3,7 @@
 #   Driver.pm
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -229,7 +229,7 @@ sub carpmess {
         if ($fn == \&Carp::shortmess) {                # Kludge alert!!
 
             #
-            # And things just got a little uglier with 5.8.0 
+            # And things just got a little uglier with 5.8.0
             #
             # -- mrogaski, 1 Aug 2002
             #
@@ -238,7 +238,7 @@ sub carpmess {
             $first =~ s/(at (.+) line \d+)$//;
             my $bad = $1;
             my @stack = split(/\n/, $msg);
-            my ($at) = $stack[$index] =~ /(at \S+ line \d+)$/ 
+            my ($at) = $stack[$index] =~ /(at \S+ line \d+)$/
                     if defined $stack[$index];
             $at = "$bad (Log::Agent could not fix it)" unless $at;
             $first .= $at;
@@ -559,7 +559,7 @@ emit() does not care!
 =back
 
 The following routine is B<frozen>. There is no way in Perl to freeze a routine,
-i.e. to explicitely forbid any redefinition, so this is an informal
+i.e. to explicitly forbid any redefinition, so this is an informal
 notification:
 
 =over 4

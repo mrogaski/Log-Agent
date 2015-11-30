@@ -3,7 +3,7 @@
 #   Fork.pm
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -111,7 +111,7 @@ sub emit {
 #
 # emit_carp
 #
-# A specialized wrapper to hand-off carp/croak messages at a 
+# A specialized wrapper to hand-off carp/croak messages at a
 # specified offset.
 #
 sub emit_carp {
@@ -308,11 +308,13 @@ Create a Log::Agent::Driver::Fork driver that duplicates logxxx() calls and
 distributes them to the drivers in @drivers.  The arguments must be the return
 value of the make() call for the client drivers.
 
+=back
+
 =head1 NOTES
 
 Many thanks go to Daniel Lundin and Jason May who proposed this module
-independently.  Eventually, logconfig() will support multiple drivers 
-directly. But, for now, this solution requires no change to the existing 
+independently.  Eventually, logconfig() will support multiple drivers
+directly. But, for now, this solution requires no change to the existing
 interface.
 
 =head1 AUTHOR

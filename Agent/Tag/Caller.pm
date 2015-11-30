@@ -3,7 +3,7 @@
 #   Caller.pm
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -147,7 +147,7 @@ sub string {
     #
 
     my @caller = caller($self->offset);
-    
+
     # Kludge for anomalies in caller()
     # Thanks to Jeff Boes for finding the second one!
     $caller[3] = (caller($self->offset + 1))[3] || '(main)';
@@ -178,13 +178,13 @@ sub string {
     my $display = $self->display;
     if ($display) {
         $display =~ s/\$pack(?:age)?\b/$package/g;
-        $display =~ s/\${pack(?:age)?}/$package/g;
+        $display =~ s/\$\{pack(?:age)?}/$package/g;
         $display =~ s/\$file(?:name)?\b/$filename/g;
-        $display =~ s/\${file(?:name)?}/$filename/g;
+        $display =~ s/\$\{file(?:name)?}/$filename/g;
         $display =~ s/\$line\b/$line/g;
-        $display =~ s/\${line}/$line/g;
+        $display =~ s/\$\{line}/$line/g;
         $display =~ s/\$sub(?:routine)?\b/$subroutine/g;
-        $display =~ s/\${sub(?:routine)?}/$subroutine/g;
+        $display =~ s/\$\{sub(?:routine)?}/$subroutine/g;
     } else {
         my @show = map { $caller[$_] } @{$self->indices};
         my $format = $self->format || ($self->postfix ? "[%a]" : "(%a)");
@@ -324,4 +324,3 @@ license information.
 Log::Agent(3), Log::Agent::Message(3).
 
 =cut
-

@@ -3,7 +3,7 @@
 #   Agent.pm
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -36,7 +36,7 @@ use vars qw(@ISA @EXPORT @EXPORT_OK);
 use Log::Agent::Priorities qw(:LEVELS priority_level level_from_prio);
 use Log::Agent::Formatting qw(tag_format_args);
 
-our $VERSION = '1.000';
+our $VERSION = '1.001';
 $VERSION = eval $VERSION;
 
 $Trace = NOTICE;	# Default tracing
@@ -469,7 +469,7 @@ Log::Agent - logging agent
 =head1 DESCRIPTION
 
 The C<Log::Agent> module provides an abstract layer for logging and
-tracing, which is independant from the actual method used to physically
+tracing, which is independent from the actual method used to physically
 perform those activities. It acts as an agent (hence the name) that
 collects the requests and delegates processing to a sublayer: the
 logging driver.
@@ -599,7 +599,7 @@ invaluable during unit testing.
 
 =item Log::Agent::inited
 
-Returns true when C<Log::Agent> was initialized, either explicitely via
+Returns true when C<Log::Agent> was initialized, either explicitly via
 a logconfig() or implicitely via any logxxx() call.
 
 =back
@@ -624,7 +624,7 @@ stack.  To report an error one level above your caller, set it to 1.
 
 For applications that wish to implement a debug layer on top of
 C<Log::Agent>, the following routine is provided.  Note that it is not
-imported by default, i.e. it needs to be explicitely mentionned at C<use>
+imported by default, i.e. it needs to be explicitly mentionned at C<use>
 time, since it is not meant to be used directly under regular usage.
 
 =over 4

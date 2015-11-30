@@ -3,7 +3,7 @@
 #   Priority.pm
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -81,9 +81,9 @@ sub make {
 	#
 
 	$display =~ s/\$priority\b/$priority/g;
-	$display =~ s/\${priority}/$priority/g;
+	$display =~ s/\$\{priority}/$priority/g;
 	$display =~ s/\$level\b/$level/g;
-	$display =~ s/\${level}/$level/g;
+	$display =~ s/\$\{level}/$level/g;
 
 	#
 	# Now create the constant tag string.
@@ -134,7 +134,7 @@ underneath.
 =item C<-level> => I<level>
 
 This parameter is internally added by C<Log::Agent> when computing the
-priority tag, since only it knows the level of the current messsage.
+priority tag, since only it knows the level of the current message.
 
 =item C<-postfix> => I<flag>
 
@@ -144,7 +144,7 @@ By default, it is prepended to the log message, i.e. this parameter is false.
 =item C<-priority> => I<prio>
 
 This parameter is internally added by C<Log::Agent> when computing the
-priority tag, since only it knows the priority of the current messsage.
+priority tag, since only it knows the priority of the current message.
 
 =item C<-separator> => I<string>
 
@@ -182,4 +182,3 @@ Raphael Manfredi F<E<lt>Raphael_Manfredi@pobox.comE<gt>>
 Log::Agent::Tag(3), Log::Agent::Message(3), Log::Agent::Priorities(3).
 
 =cut
-

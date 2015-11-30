@@ -1,6 +1,6 @@
 README                           The main README file
 MANIFEST                         This list
-changes.pod                      List of changes
+CHANGELOG.md                     List of changes
 Makefile.PL                      Generic Makefile template
 Agent.pm                         Main agent, default interface
 Agent/Channel.pm                 Ancestor for all channels
