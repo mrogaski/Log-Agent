@@ -81,9 +81,9 @@ sub make {
 	#
 
 	$display =~ s/\$priority\b/$priority/g;
-	$display =~ s/\${priority}/$priority/g;
+	$display =~ s/\$\{priority}/$priority/g;
 	$display =~ s/\$level\b/$level/g;
-	$display =~ s/\${level}/$level/g;
+	$display =~ s/\$\{level}/$level/g;
 
 	#
 	# Now create the constant tag string.
