@@ -1,6 +1,9 @@
 # Change Log
 
-## [Unreleased]
+## [1.001] - 2015-11-29
+### Added
+- Added .gitignore.
+
 ### Changed
 - Moved change log to Markdown format.  CHANGELOG.md replaces changes.pod.
 
@@ -31,7 +34,7 @@
 
 ## [0.306] - 2004-02-02
 ### Fixed
-- Stripped line endings in common tests to allow tests to succeed under non-UN*X environments. 
+- Stripped line endings in common tests to allow tests to succeed under non-UN*X environments.
 - Replaced an unnecessary handle alias with the actual file name in t/file.t. (Jay Lawrence and Terrence Brannon)
 
 ## [0.305] - 2003-09-27
@@ -188,6 +191,7 @@
 ## 0.100
 Initial revision.
 
+[1.001]: https://github.com/mrogaski/Log-Agent/compare/v1.000...v1.001
 [1.000]: https://github.com/mrogaski/Log-Agent/compare/v0.308...v1.000
 [0.308]: https://github.com/mrogaski/Log-Agent/compare/rel_0_3_7...v0.308
 [0.307]: https://github.com/mrogaski/Log-Agent/compare/rel_0_3_6...rel_0_3_7
