@@ -4,7 +4,7 @@
 #   fork.t
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -82,5 +82,3 @@ ok(contains("t/fork_file.out", 'FATAL: et tu, Chuckles\?'));
 
 unlink 't/fork_std.out', 't/fork_std.err',
         't/fork_file.out', 't/fork_file.err';
-
-

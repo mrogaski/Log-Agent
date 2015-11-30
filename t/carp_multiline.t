@@ -4,7 +4,7 @@
 #   carp_multiline.t
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -24,4 +24,3 @@ $die1 =~ s/^\s+eval.*\n//m;
 $die1 =~ s/(at .* line \d+)\./$1/m; # I'm not gonna bother.
 
 ok($die1 eq $die2);
-

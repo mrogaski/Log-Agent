@@ -3,7 +3,7 @@
 #   File_Pool.pm
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -93,7 +93,7 @@ sub remove {
 	my $item = $self->info->{$path};
 	return 1 unless defined $item;
 	return 0 if --$item->[2];
-	
+
 	#
 	# Reference count reached 0
 	#
@@ -103,4 +103,3 @@ sub remove {
 }
 
 1;	# for require
-

@@ -4,7 +4,7 @@
 #   carp_fork.t
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -19,7 +19,7 @@ require Log::Agent::Driver::File;
 unlink 't/file.out', 't/file.err';
 
 my $driver = Log::Agent::Driver::Fork->make(
-    Log::Agent::Driver::File->make( 
+    Log::Agent::Driver::File->make(
         -prefix => 'me',
         -channels => {
             'error' => 't/file.err',
@@ -30,4 +30,3 @@ my $driver = Log::Agent::Driver::Fork->make(
 logconfig(-driver => $driver);
 
 do 't/carp.pl';
-

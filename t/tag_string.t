@@ -4,7 +4,7 @@
 #   tag_string.t
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -50,4 +50,3 @@ ok 1, contains("t/file.err", '<tag #1> error string$');
 ok 2, contains("t/file.err", '<tag #1> warn string <tag #2>$');
 
 unlink 't/file.out', 't/file.err';
-

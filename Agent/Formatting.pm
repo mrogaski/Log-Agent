@@ -3,7 +3,7 @@
 #   Formatting.pm
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -26,7 +26,7 @@ require Log::Agent::Message;
 
 #
 # adjust_fmt
-# 
+#
 # We process syslog's %m macro as being the current error message ($!) in
 # the first argument only. Doing it at this level means it will be supported
 # independently from the driver they'll choose. It's also done BEFORE any
@@ -57,7 +57,7 @@ if ($] >= 5.005) {
 #
 # whine
 #
-# This is a local hack of carp 
+# This is a local hack of carp
 #
 sub whine {
     my $msg = shift;
@@ -86,8 +86,8 @@ sub tag_format_args {
     my $msg = adjust_fmt(shift @$ary);
 
     # This bit of tomfoolery is intended to make debugging of
-    # programs a bit easier by prechecking input to sprintf() 
-    # for errors.  I usually prefer lazy error checking, but 
+    # programs a bit easier by prechecking input to sprintf()
+    # for errors.  I usually prefer lazy error checking, but
     # this seems to be an appropriate exception.
     if (my @arglist = $msg =~ /\%[^\%]*[csduoxefgXEGbpniDUOF]|\%\%/g) {
         BEGIN { no warnings }
@@ -110,4 +110,3 @@ sub tag_format_args {
 }
 
 1;
-

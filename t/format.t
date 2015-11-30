@@ -4,7 +4,7 @@
 #   format.t
 #
 #   Copyright (C) 1999 Raphael Manfredi.
-#   Copyright (C) 2002-2003, 2005, 2013 Mark Rogaski, mrogaski@cpan.org;
+#   Copyright (C) 2002-2015 Mark Rogaski, mrogaski@cpan.org;
 #   all rights reserved.
 #
 #   See the README file included with the
@@ -40,4 +40,3 @@ ok($@ =~ /Because 3 is the magic number/);
 
 eval { logdie 'night of the living %*2$x', 233495723, 4 };
 skip($] < 5.008 ? "pre 5.8.0" : 0, $@ =~ /Night of the living dead/);
-
