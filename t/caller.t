@@ -12,15 +12,17 @@
 #
 ##########################################################################
 
-print "1..10\n";
-
-require 't/code.pl';
-sub ok;
+use Test::More tests => 10;
+use Test::File::Contents;
+use File::Spec;
 
 use Log::Agent;
 require Log::Agent::Driver::File;
 
-unlink 't/file.out', 't/file.err';
+my $file_src = __FILE__;
+my $file_err = File::Spec->catfile('t', 'file.err');
+my $file_out = File::Spec->catfile('t', 'file.out');
+unlink $file_err, $file_out;
 
 my $show_error = __LINE__ + 2;
 sub show_error {
@@ -40,8 +42,8 @@ sub show_carp {
 my $driver = Log::Agent::Driver::File->make(
 	-prefix => 'me',
 	-channels => {
-		'error' => 't/file.err',
-		'output' => 't/file.out'
+		'error' => $file_err,
+		'output' => $file_out
 	},
 );
 logconfig(
@@ -58,23 +60,23 @@ my $error_str = sprintf("%.4d", $show_error);
 my $output_str = sprintf("%.4d", $show_output);
 my $carp_str = sprintf("%.4d", $show_carp);
 
-ok 1, contains("t/file.err", "error string <main::show_error,$error_str>");
-ok 2, !contains("t/file.err", "output string");
-ok 3, contains("t/file.out", "output string <main::show_output,$output_str>");
-ok 4, !contains("t/file.out", "error string");
-ok 5, contains("t/file.err",
-	"carp string at t/caller.t line $carp_line <main::show_carp,$carp_str>");
-ok 6, !contains("t/file.out", "carp string");
+file_contents_like $file_err, qr/error string <main::show_error,$error_str>/;
+file_contents_unlike $file_err, qr/output string/;
+file_contents_like $file_out, qr/output string <main::show_output,$output_str>/;
+file_contents_unlike $file_out, qr/error string/;
+file_contents_like $file_err,
+	qr/carp string at \Q$file_src\E line ${carp_line} <main::show_carp,$carp_str>/;
+file_contents_unlike $file_out, qr/carp string/;
 
-unlink 't/file.out', 't/file.err';
+unlink $file_err, $file_out;
 
 undef $Log::Agent::Driver;		# Cheat
 
 $driver = Log::Agent::Driver::File->make(
 	-prefix => 'me',
 	-channels => {
-		'error' => 't/file.err',
-		'output' => 't/file.out'
+		'error' => $file_err,
+		'output' => $file_out
 	},
 );
 logconfig(
@@ -87,14 +89,12 @@ show_output;
 
 $error_str = $show_error;
 $output_str = $show_output;
-my $file = __FILE__;
 
-ok 7, contains("t/file.err",
-	"<main:${file}:main::show_error:$error_str> error");
-ok 8, contains("t/file.out",
-	"<main:${file}:main::show_output:$output_str> output");
-
-unlink 't/file.out', 't/file.err';
+file_contents_like $file_err,
+	qr/<main:\Q$file_src\E:main::show_error:$error_str> error/;
+file_contents_like $file_out,
+	qr/<main:\Q$file_src\E:main::show_output:$output_str> output/;
+unlink $file_err, $file_out;
 
 undef $Log::Agent::Driver;		# Cheat
 
@@ -113,7 +113,7 @@ logconfig(
 show_error;
 show_output;
 
-ok 9, contains("t/file.err", "<main::show_error\\/$error_str> error");
-ok 10, contains("t/file.out", "<main::show_output\\/$output_str> output");
+file_contents_like $file_err, qr/<main::show_error\/$error_str> error/;
+file_contents_like $file_out, qr/<main::show_output\/$output_str> output/;
 
-unlink 't/file.out', 't/file.err';
+unlink $file_err, $file_out;

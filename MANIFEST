@@ -1,48 +1,53 @@
-README                           The main README file
-MANIFEST                         This list
-CHANGELOG.md                     List of changes
-Makefile.PL                      Generic Makefile template
-Agent.pm                         Main agent, default interface
-Agent/Channel.pm                 Ancestor for all channels
-Agent/Channel/File.pm            File logging channel
-Agent/Channel/Handle.pm          I/O handle logging channel
-Agent/Channel/Syslog.pm          Syslog logging channel
-Agent/Driver.pm                  Ancestor for all drivers
-Agent/Driver/Datum.pm            Intercepting driver for Devel::Datum
-Agent/Driver/Default.pm          Default logging driver
-Agent/Driver/File.pm             File driver
-Agent/Driver/Fork.pm             Fork to split output to multiple drivers
-Agent/Driver/Mail.pm             Email driver
-Agent/Driver/Silent.pm           Silent driver
-Agent/Driver/Syslog.pm           Syslog driver
-Agent/File/Native.pm             A native file handle
-Agent/File_Pool.pm               Pool of file logging channels for sharing
-Agent/Formatting.pm              Log formatting routines
-Agent/Message.pm                 A log message
-Agent/Prefixer.pm                Log prefixer (name, pid)
-Agent/Priorities.pm              Priority manipulation routines
-Agent/Stamping.pm                Log timestamping routines
-Agent/Tag.pm                     Ancestor for message tags
-Agent/Tag/Callback.pm            Add dynamically computed tags to messages
-Agent/Tag/Caller.pm              Computes and formats caller information
-Agent/Tag/Priority.pm            Add priority/level information to messages
-Agent/Tag/String.pm              Add constant string to messages
-Agent/Tag_List.pm                Holds list of user-defined tags
-t/caller.t                       Test caller information
-t/carp.pl                        Library for tests
-t/carp_default.t                 Test logcarp() and logxcarp() with defaults
-t/carp_file.t                    Test logcarp() and logxcarp() to file
-t/carp_fork.t                    Test logcarp() and logxcarp() to fork
-t/carp_multiline.t               Test logcarp() and logxcarp() with newlines
-t/carp_silent.t                  Test logcarp() and logcroak() with silent
-t/code.pl                        Library for tests
-t/common.pl                      Library for tests
-t/default.t                      Test default settings and driver
-t/default_exp.t                  Test default settings, explicit logconfig()
-t/file.t                         Test file driver
-t/fork.t                         Test driver fork
-t/format.t                       Test the sprintf compatibility of logxxx()
-t/priority.t                     Test -priority setting in logconfig()
-t/tag_callback.t                 Test log message tag via callback
-t/tag_string.t                   Test log message tag via string
-META.json                        Module meta-data
+Build.PL
+CHANGELOG.md
+lib/Log/Agent.pm
+lib/Log/Agent/Channel.pm
+lib/Log/Agent/Channel/File.pm
+lib/Log/Agent/Channel/Handle.pm
+lib/Log/Agent/Channel/Syslog.pm
+lib/Log/Agent/Driver.pm
+lib/Log/Agent/Driver/Datum.pm
+lib/Log/Agent/Driver/Default.pm
+lib/Log/Agent/Driver/File.pm
+lib/Log/Agent/Driver/Fork.pm
+lib/Log/Agent/Driver/Mail.pm
+lib/Log/Agent/Driver/Silent.pm
+lib/Log/Agent/Driver/Syslog.pm
+lib/Log/Agent/File/Native.pm
+lib/Log/Agent/File_Pool.pm
+lib/Log/Agent/Formatting.pm
+lib/Log/Agent/Message.pm
+lib/Log/Agent/Prefixer.pm
+lib/Log/Agent/Priorities.pm
+lib/Log/Agent/Stamping.pm
+lib/Log/Agent/Tag.pm
+lib/Log/Agent/Tag/Callback.pm
+lib/Log/Agent/Tag/Caller.pm
+lib/Log/Agent/Tag/Priority.pm
+lib/Log/Agent/Tag/String.pm
+lib/Log/Agent/Tag_List.pm
+MANIFEST			This list of files
+README
+t/caller.t
+t/carp.pl
+t/carp_default.t
+t/carp_file.t
+t/carp_fork.t
+t/carp_multiline.t
+t/carp_silent.t
+t/code.pl
+t/common.pl
+t/default.t
+t/default_exp.t
+t/file.err
+t/file.t
+t/file2.err
+t/file2.out
+t/file3.err
+t/fork.t
+t/fork_file.err
+t/fork_file.out
+t/format.t
+t/priority.t
+t/tag_callback.t
+t/tag_string.t
