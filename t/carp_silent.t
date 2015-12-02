@@ -15,7 +15,6 @@
 use Test::More tests => 2;
 use Test::File::Contents;
 use File::Spec;
-
 use Log::Agent;
 require Log::Agent::Driver::Silent;
 

@@ -39,14 +39,8 @@ t/code.pl
 t/common.pl
 t/default.t
 t/default_exp.t
-t/file.err
 t/file.t
-t/file2.err
-t/file2.out
-t/file3.err
 t/fork.t
-t/fork_file.err
-t/fork_file.out
 t/format.t
 t/priority.t
 t/tag_callback.t
