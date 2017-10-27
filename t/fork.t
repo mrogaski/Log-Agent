@@ -14,7 +14,7 @@
 
 use strict;
 use Test;
-require 't/common.pl';
+require './t/common.pl';
 
 BEGIN { plan tests => 19 }
 

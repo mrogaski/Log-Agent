@@ -20,4 +20,4 @@ select(ORIG_STDOUT);
 open(STDOUT, ">t/file.out") || die "can't redirect STDOUT: $!\n";
 open(STDERR, ">t/file.err") || die "can't redirect STDOUT: $!\n";
 
-do 't/carp.pl';
+do './t/carp.pl';

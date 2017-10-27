@@ -12,7 +12,7 @@
 #
 ##########################################################################
 
-require 't/code.pl';
+require './t/code.pl';
 sub ok;
 
 eval "require Callback";

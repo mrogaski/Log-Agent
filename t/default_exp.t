@@ -19,7 +19,7 @@
 
 print "1..8\n";
 
-require 't/code.pl';
+require './t/code.pl';
 sub ok;
 
 use Log::Agent;

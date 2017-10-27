@@ -14,10 +14,10 @@
 
 print "1..11\n";
 
-require 't/code.pl';
+require './t/code.pl';
 sub ok;
 
-my $FILE = "t/carp.pl";
+my $FILE = "./t/carp.pl";
 
 package OTHER;
 use Log::Agent;

@@ -15,7 +15,7 @@
 use Test::More;
 use Log::Agent;
 require Log::Agent::Driver::File;
-require 't/common.pl';
+require './t/common.pl';
 
 BEGIN { plan tests => 38 }
 

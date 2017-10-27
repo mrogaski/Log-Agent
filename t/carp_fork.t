@@ -29,4 +29,4 @@ my $driver = Log::Agent::Driver::Fork->make(
 );
 logconfig(-driver => $driver);
 
-do 't/carp.pl';
+do './t/carp.pl';
