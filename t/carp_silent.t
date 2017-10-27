@@ -12,22 +12,19 @@
 #
 ##########################################################################
 
-use Test::More tests => 2;
-use Test::File::Contents;
-use File::Spec;
+print "1..2\n";
+
+require 't/code.pl';
+sub ok;
+
 use Log::Agent;
 require Log::Agent::Driver::Silent;
 
 open(ORIG_STDOUT, ">&STDOUT") || die "can't dup STDOUT: $!\n";
 select(ORIG_STDOUT);
 
-my $file_src = __FILE__;
-my $file_err = File::Spec->catfile('t', 'file.err');
-my $file_out = File::Spec->catfile('t', 'file.out');
-unlink $file_err, $file_out;
-
-open(STDOUT, ">$file_out") || die "can't redirect STDOUT: $!\n";
-open(STDERR, ">$file_err") || die "can't redirect STDERR: $!\n";
+open(STDOUT, ">t/file.out") || die "can't redirect STDOUT: $!\n";
+open(STDERR, ">t/file.err") || die "can't redirect STDOUT: $!\n";
 
 my $driver = Log::Agent::Driver::Silent->make();
 logconfig(-driver => $driver);
@@ -41,9 +38,9 @@ my $line = __LINE__ + 1;
 test();
 
 sub END {
-	file_contents_unlike $file_err, qr/none/;
-	file_contents_like $file_err, qr/test at \Q$file_src\E line $line/;
+	ok 1, !contains("t/file.err", "none");
+	ok 2, contains("t/file.err", "test at t/carp_silent.t line $line");
 
-	unlink $file_err, $file_out;
+	unlink 't/file.out', 't/file.err';
 	exit 0;
 }

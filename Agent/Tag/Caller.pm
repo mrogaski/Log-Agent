@@ -178,13 +178,13 @@ sub string {
     my $display = $self->display;
     if ($display) {
         $display =~ s/\$pack(?:age)?\b/$package/g;
-        $display =~ s/\$\{pack(?:age)?}/$package/g;
+        $display =~ s/\${pack(?:age)?}/$package/g;
         $display =~ s/\$file(?:name)?\b/$filename/g;
-        $display =~ s/\$\{file(?:name)?}/$filename/g;
+        $display =~ s/\${file(?:name)?}/$filename/g;
         $display =~ s/\$line\b/$line/g;
-        $display =~ s/\$\{line}/$line/g;
+        $display =~ s/\${line}/$line/g;
         $display =~ s/\$sub(?:routine)?\b/$subroutine/g;
-        $display =~ s/\$\{sub(?:routine)?}/$subroutine/g;
+        $display =~ s/\${sub(?:routine)?}/$subroutine/g;
     } else {
         my @show = map { $caller[$_] } @{$self->indices};
         my $format = $self->format || ($self->postfix ? "[%a]" : "(%a)");

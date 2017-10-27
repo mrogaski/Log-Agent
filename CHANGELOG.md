@@ -1,9 +1,5 @@
 # Change Log
 
-## Unreleased
-### Changed
-- Converted build script to Module::Build.
-
 ## [1.001] - 2015-11-29
 ### Added
 - Added .gitignore.
