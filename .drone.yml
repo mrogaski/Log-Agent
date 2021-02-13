@@ -7,7 +7,33 @@ steps:
   - name: test
     image: perl:5.32
     commands:
+      - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
       - cpanm --quiet --installdeps --notest .
       - perl Makefile.PL
       - make
-      - make test
+      - cover -test
+  - name: coverage
+    image: plugins/codecov
+    settings:
+      token:
+        from_secret: codecov-token
+
+---
+kind: pipeline
+type: docker
+name: perl-5-30
+
+steps:
+  - name: test
+    image: perl:5.30
+    commands:
+      - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
+      - cpanm --quiet --installdeps --notest .
+      - perl Makefile.PL
+      - make
+      - cover -test
+  - name: coverage
+    image: plugins/codecov
+    settings:
+      token:
+        from_secret: codecov-token
