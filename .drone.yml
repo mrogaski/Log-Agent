@@ -12,11 +12,7 @@ steps:
       - perl Makefile.PL
       - make
       - cover -test
-  - name: coverage
-    image: plugins/codecov
-    settings:
-      token:
-        from_secret: codecov-token
+      - cover -report codecov
 
 ---
 kind: pipeline
@@ -32,8 +28,4 @@ steps:
       - perl Makefile.PL
       - make
       - cover -test
-  - name: coverage
-    image: plugins/codecov
-    settings:
-      token:
-        from_secret: codecov-token
+      - cover -report codecov
