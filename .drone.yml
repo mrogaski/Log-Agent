@@ -1,0 +1,13 @@
+---
+kind: pipeline
+type: docker
+name: perl-5-32
+
+steps:
+  - name: test
+    image: perl
+    commands:
+      - cpanm --quiet --installdeps --notest .
+      - perl Makefile.PL
+      - make
+      - make test
