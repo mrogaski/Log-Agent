@@ -6,6 +6,9 @@ name: perl-5-32
 steps:
   - name: test
     image: perl:5.32
+    environment:
+      CODECOV_TOKEN:
+        from_secret: codecov-token
     commands:
       - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
       - cpanm --quiet --installdeps --notest .
@@ -22,6 +25,9 @@ name: perl-5-30
 steps:
   - name: test
     image: perl:5.30
+    environment:
+      CODECOV_TOKEN:
+        from_secret: codecov-token
     commands:
       - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
       - cpanm --quiet --installdeps --notest .
