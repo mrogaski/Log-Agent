@@ -5,7 +5,7 @@ name: perl-5-32
 
 steps:
   - name: test
-    image: perl
+    image: perl:5.32
     commands:
       - cpanm --quiet --installdeps --notest .
       - perl Makefile.PL
