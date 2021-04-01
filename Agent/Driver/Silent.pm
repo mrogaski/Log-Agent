@@ -46,6 +46,7 @@ sub channel_eq { 1 }
 
 sub logerr {}
 sub logwarn {}
+sub logcluck {}
 sub logsay {}
 sub logwrite {}
 sub logxcarp {}
