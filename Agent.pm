@@ -26,7 +26,7 @@ use vars qw(@ISA @EXPORT @EXPORT_OK);
 @ISA = qw(Exporter);
 @EXPORT = qw(
 	logconfig
-	logconfess logcroak logcarp logxcroak logxcarp
+	logconfess logcluck logcroak logcarp logxcroak logxcarp
 	logsay logerr logwarn logdie logtrc logdbg
 );
 @EXPORT_OK = qw(
@@ -310,6 +310,19 @@ sub logxcarp {
 }
 
 #
+# logcluck
+#
+# Warning, with a full stack trace.
+#
+sub logcluck {
+	return if $Trace < WARN;
+	my $ptag = prio_tag(priority_level(WARN)) if defined $Priorities;
+	my $str = tag_format_args($Caller, $ptag, $Tags, \@_);
+	&log_default unless defined $Driver;
+	$Driver->logcluck($str);
+}
+
+#
 # logwarn
 #
 # Log warning at the "warning" level.
@@ -573,6 +586,10 @@ Log a warning message at the C<warning> priority to the C<error> channel.
 
 Same as logwarn(), but issues a Carp::carp(3) call instead, which will
 warn from the perspective of the routine's caller.
+
+=item logcluck I<message>
+
+Same as logwarn(), but dumps a full stacktrace as well.
 
 =item logerr I<message>
 

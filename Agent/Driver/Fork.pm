@@ -232,6 +232,18 @@ sub logwarn {
 }
 
 #
+# logcluck
+#
+# Warning, with stack trace
+#
+sub logcluck {
+    my($self, $str) = @_;
+
+    # log error to all drivers
+    $self->emit_carp('error', 'warning', 0, $str);
+}
+
+#
 # logcarp
 #
 # log a warning, carp-style
