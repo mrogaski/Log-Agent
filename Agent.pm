@@ -27,7 +27,7 @@ use vars qw(@ISA @EXPORT @EXPORT_OK);
 @EXPORT = qw(
 	logconfig
 	logconfess logcluck logcroak logcarp logxcroak logxcarp
-	logsay logerr logwarn logdie logtrc logdbg
+	logdebug loginfo logsay logerr logwarn logdie logtrc logdbg
 );
 @EXPORT_OK = qw(
 	logwrite logtags
@@ -348,6 +348,30 @@ sub logsay {
 	$Driver->logsay($str);
 }
 
+# loginfo
+#
+# Log message at the "info" level.
+#
+sub loginfo {
+	return if $Trace < INFO;
+	my $ptag = prio_tag(priority_level(INFO)) if defined $Priorities;
+	my $str = tag_format_args($Caller, $ptag, $Tags, \@_);
+	&log_default unless defined $Driver;
+	$Driver->loginfo($str);
+}
+
+# logdebug
+#
+# Log message at the "debug" level.
+#
+sub logdebug {
+	return if $Trace < DEBUG;
+	my $ptag = prio_tag(priority_level(INFO)) if defined $Priorities;
+	my $str = tag_format_args($Caller, $ptag, $Tags, \@_);
+	&log_default unless defined $Driver;
+	$Driver->logdebug($str);
+}
+
 #
 # logtrc		-- frozen
 #
@@ -565,6 +589,17 @@ Trace logging of I<message> to the C<output> channel.
 Like logdbg() above, you are not restricted to the C<info> priority. This
 routine checks the logging level (either explicit as in C<"info:14">
 or implicit as in C<"notice">) against the trace level.
+
+=item logdebug I<message>
+
+Log the message at the C<debug> priority to the C<output> channel.
+
+The difference with logdbg() is twofold: logging is done on the
+C<output> channel, not the C<debug> one, and the priority is implicit.
+
+=item loginfo I<message>
+
+Log the message at the C<info> priority to the C<output> channel.
 
 =item logsay I<message>
 

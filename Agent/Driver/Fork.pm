@@ -285,6 +285,34 @@ sub logsay {
     $self->emit('output', 'notice', $str);
 }
 
+#
+# loginfo
+#
+# Log message to "output" channel at "info" priority
+#
+sub loginfo {
+    my($self, $str) = @_;
+
+    #
+    # send message to drivers
+    #
+    $self->emit('output', 'info', $str);
+}
+
+#
+# logdebug
+#
+# Log message to "output" channel at "debug" priority
+#
+sub logdebug {
+    my($self, $str) = @_;
+
+    #
+    # send message to drivers
+    #
+    $self->emit('output', 'debug', $str);
+}
+
 1;  # for require
 __END__
 
