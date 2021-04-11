@@ -1,0 +1,60 @@
+name: CI/CD
+
+on: [push, pull_request]
+
+jobs:
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        perl-version:
+          - '5.30'
+          - '5.32'
+          - 'latest'
+          - 'threaded'
+
+    container:
+      image: perl:${{ matrix.perl-version }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure
+        run: perl Makefile.PL
+      - name: Build
+        run: make
+      - name: Test
+        run: make test
+      - name: Report coverage
+        continue-on-error: true
+        run: |
+          cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
+          cpanm --quiet --installdeps --notest .
+          cover -test
+          cover -report codecov
+        env:
+          CODECOV_TOKEN: $${{ secrets.CODECOV_TOKEN }}
+
+  release:
+    runs-on: ubuntu-latest
+    name: Release
+    needs: test
+    if: startsWith(github.ref, 'refs/tags')
+
+    container:
+      image: perl:latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure
+        run: perl Makefile.PL
+      - name: Build
+        run: make dist
+      - name: Upload to CPAN
+        id: upload
+        uses: thibaultduponchelle/action-upload-to-cpan@master
+        with:
+          username: ${{ secrets.CPAN_USERNAME }}
+          password: ${{ secrets.CPAN_PASSWORD }}
