@@ -1,0 +1,30 @@
+name: CI/CD
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        perl-version:
+          - '5.30'
+          - '5.32'
+          - 'latest'
+          - 'threaded'
+
+    container:
+      image: perl:${{ matrix.perl-version }}
+
+    name: Build and test
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure
+        run: perl Makefile.PL
+      - name: Build
+        run: make
+      - name: Test
+        run: make test
