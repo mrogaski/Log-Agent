@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.005] - Unreleased
+### Added
+- Added support for `logcluck`.
+
+### Changed
+- Updated socktype handling to comply with the current language interface.
+- Moved from Drone CI to Github Actions, automating upload to CPAN.
+
 ## [1.004] - 2021-02-13
 ### Changed
 - Moved from Travis CI with Coveralls to Drone CI with CodeCov.
