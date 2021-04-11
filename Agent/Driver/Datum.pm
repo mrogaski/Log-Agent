@@ -120,6 +120,8 @@ sub logcluck	{ intercept(\@_, '>>', 'logcluck',	 'error',	'WARNING') }
 sub logwarn		{ intercept(\@_, '>>', 'logwarn',	 'error',	'WARNING') }
 sub logxcarp	{ intercept(\@_, '>>', 'logxcarp',	 'error',	'WARNING') }
 sub logsay		{ intercept(\@_, '>>', 'logsay',	 'output') }
+sub loginfo		{ intercept(\@_, '>>', 'loginfo',	 'output') }
+sub logdebug	{ intercept(\@_, '>>', 'logdebug',	 'output') }
 
 #
 # logwrite		-- redefined

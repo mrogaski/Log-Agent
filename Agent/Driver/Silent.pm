@@ -44,10 +44,12 @@ sub channel_eq { 1 }
 # routines would not do anything. Let's redefine them though...
 #
 
-sub logerr {}
-sub logwarn {}
+sub logerr   {}
+sub logwarn  {}
 sub logcluck {}
-sub logsay {}
+sub logsay   {}
+sub loginfo  {}
+sub logdebug {}
 sub logwrite {}
 sub logxcarp {}
 

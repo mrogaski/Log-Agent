@@ -362,6 +362,28 @@ sub logsay {
 }
 
 #
+# loginfo
+#
+# Log message at the "info" level.
+#
+sub loginfo {
+    my $self = shift;
+    my ($str) = @_;
+    $self->emit('output', 'info', $str);
+}
+
+#
+# logdebug
+#
+# Log message at the "debug" level.
+#
+sub logdebug {
+    my $self = shift;
+    my ($str) = @_;
+    $self->emit('output', 'debug', $str);
+}
+
+#
 # logwrite
 #
 # Emit the message to the specified channel
