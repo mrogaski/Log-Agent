@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
 
   test:
-    name: Build and test
+    name: Test
     runs-on: ubuntu-latest
 
     strategy:
@@ -36,3 +36,23 @@ jobs:
           cover -report codecov
         env:
           CODECOV_TOKEN: $${{ secrets.CODECOV_TOKEN }}
+
+  release:
+    runs-on: ubuntu-latest
+    name: Release
+
+    container:
+      image: perl:latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure
+        run: perl Makefile.PL
+      - name: Build
+        run: make dist
+      - name: Upload to CPAN
+        id: upload
+        uses: thibaultduponchelle/action-upload-to-cpan@master
+        with:
+          username: ${{ secrets.CPAN_USERNAME }}
+          password: ${{ secrets.CPAN_PASSWORD }}
