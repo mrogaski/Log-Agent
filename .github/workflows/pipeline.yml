@@ -31,3 +31,6 @@ jobs:
           cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
           cpanm --quiet --installdeps --notest .
           cover -test
+          cover -report codecov
+        env:
+          CODECOV_TOKEN: $${{ secrets.CODECOV_TOKEN }}
