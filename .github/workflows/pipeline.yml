@@ -27,4 +27,7 @@ jobs:
       - name: Build
         run: make
       - name: Test
-        run: make test
+        run: |
+          cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
+          cpanm --quiet --installdeps --notest .
+          cover -test
