@@ -4,7 +4,8 @@ on: [push, pull_request]
 
 jobs:
 
-  build:
+  test:
+    name: Build and test
     runs-on: ubuntu-latest
 
     strategy:
@@ -18,8 +19,6 @@ jobs:
     container:
       image: perl:${{ matrix.perl-version }}
 
-    name: Build and test
-
     steps:
       - uses: actions/checkout@v2
       - name: Configure
@@ -27,6 +26,9 @@ jobs:
       - name: Build
         run: make
       - name: Test
+        run: make test
+      - name: Report coverage
+        continue-on-error: true
         run: |
           cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
           cpanm --quiet --installdeps --notest .
