@@ -1,8 +1,8 @@
 # Change Log
 
-## [1.005] - Unreleased
+## [1.005] - 2021-04-11
 ### Added
-- Added support for `logcluck`.
+- Added support for `logcluck`. `loginfo`, and `logdebug`.
 
 ### Changed
 - Updated socktype handling to comply with the current language interface.
@@ -219,6 +219,7 @@
 ## 0.100
 Initial revision.
 
+[1.005]: https://github.com/mrogaski/Log-Agent/compare/v1.004...v1.005
 [1.004]: https://github.com/mrogaski/Log-Agent/compare/v1.003...v1.004
 [1.003]: https://github.com/mrogaski/Log-Agent/compare/v1.002...v1.003
 [1.002]: https://github.com/mrogaski/Log-Agent/compare/v1.001...v1.002
