@@ -368,7 +368,7 @@ sub logerr {
 # When `duperr' is true, emit message on the 'output' channel prefixed
 # with WARNING.
 #
-sub logconfess {
+sub logcluck {
     my $self = shift;
     my ($str) = @_;
     $self->emit_output('warning', "WARNING", $str) if $self->duperr;
