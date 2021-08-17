@@ -543,7 +543,7 @@ logtrc() and logdbg() routines, respectively.
 The C<Log::Agent> class defines three logging channels, which are
 C<error>, C<output> and C<debug>. Depending on the driver used for
 logging, those channels are ignored (typically with syslog()) or may
-be implicitely defined (default logging, i.e. the one achieved by the
+be implicitly defined (default logging, i.e. the one achieved by the
 C<Log::Agent::Driver::Default> driver, remaps C<error> and C<debug>
 to stderr, C<output> to stdout).
 
@@ -568,7 +568,7 @@ Here are valid I<message> examples:
     "started since %s", $time
     "fork: %m"
 
-The follwing logging interface is made available to modules:
+The following logging interface is made available to modules:
 
 =over 4
 
@@ -652,7 +652,7 @@ invaluable during unit testing.
 =item Log::Agent::inited
 
 Returns true when C<Log::Agent> was initialized, either explicitly via
-a logconfig() or implicitely via any logxxx() call.
+a logconfig() or implicitly via any logxxx() call.
 
 =back
 
@@ -676,7 +676,7 @@ stack.  To report an error one level above your caller, set it to 1.
 
 For applications that wish to implement a debug layer on top of
 C<Log::Agent>, the following routine is provided.  Note that it is not
-imported by default, i.e. it needs to be explicitly mentionned at C<use>
+imported by default, i.e. it needs to be explicitly mentioned at C<use>
 time, since it is not meant to be used directly under regular usage.
 
 =over 4

@@ -284,12 +284,12 @@ by C<-info> and is rendered by a string where values are separated by ":".
 
 =item C<-info> => I<"space separated list of parameters">
 
-Specifies a list of caller information entities that are to be formated
+Specifies a list of caller information entities that are to be formatted
 using the C<-format> specification. For instance:
 
     -info => "pack sub line"
 
-would only report those three entites.
+would only report those three entities.
 
 =item C<-postfix> => I<flag>
 

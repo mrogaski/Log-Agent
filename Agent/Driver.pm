@@ -467,7 +467,7 @@ the same output when Carp::Datum is installed and activated.
 =item write($channel, $priority, $logstring)
 
 Emit the log entry held in $logstring, at priority $priority and through
-the specfied $channel name. A trailing "\n" is to be added if needed, but the
+the specified $channel name. A trailing "\n" is to be added if needed, but the
 $logstring should not already have one.
 
 The $channel name is just a string, and it is up to the driver to map that
@@ -591,7 +591,7 @@ using dynamic binding.
 
 =item map_pri($priority, $level)
 
-Converts a ("priority", level) tupple to a single priority token suitable
+Converts a ("priority", level) tuple to a single priority token suitable
 for emit(). By default, returns an empty string, which is OK only when
 emit() does not care!
 
