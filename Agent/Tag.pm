@@ -168,7 +168,7 @@ depends on the value of the C<postfix> attribute.
 
 =item insert(I<message>)
 
-Insert this tag withing the C<Log::Agent::Message> I<message>, according
+Insert this tag within the C<Log::Agent::Message> I<message>, according
 to the tag specifications (placement, separator).  Calls string() to produce
 the tag string.
 

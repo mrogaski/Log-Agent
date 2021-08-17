@@ -140,7 +140,7 @@ The missing levels (5, 7, 9) are there for possible extension.
 They currently map to the level immediately below.
 
 The Export column lists the symbolic constants defined by this package.
-They can be imported selectively, or alltogether via the C<:LEVELS>
+They can be imported selectively, or altogether via the C<:LEVELS>
 tag, as in:
 
     use Log::Agent::Priorities qw(:LEVELS);
@@ -155,7 +155,7 @@ as a logging level or a string taken as a priority. If the default
 mapping outlined above is not satisfactory, it can be redefined by
 specifying, for instance C<"notice:9">. It will be taken as being of
 level 9, but with a C<notice> priority nonetheless, not C<info> as
-it would have been implicitely determined otherwise.
+it would have been implicitly determined otherwise.
 
 The routine priority_level() decompiles C<"notice:9"> into ("notice", 9),
 and otherwise uses prio_from_level() or level_from_prio() to compute the

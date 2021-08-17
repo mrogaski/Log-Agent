@@ -186,7 +186,7 @@ order, which is counter-intuitive at first sight.
 In plain words, this means that the last routine that prepends something
 to the message will get its prepended string right next to the original
 string, regardless of what could have been prepended already. The behaviour
-is symetric for appending.
+is symmetric for appending.
 
 =head1 INTERFACE
 
